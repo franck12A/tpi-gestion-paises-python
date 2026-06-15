@@ -10,15 +10,26 @@ def validar_entero(mensaje):
     while True:
         try:
             numero = int(input(mensaje))
-            return numero
+            if numero > 0:
+                return numero
+            else:
+                print("Error: ingrese un número entero positivo.")
         except ValueError:
             print("Error: ingrese un número entero válido.")
+        
 
 def validar_opcion(mensaje, opciones):
     while True:
         opcion = input(mensaje).strip()
+
         if opcion in opciones:
             return opcion
         else:
             print(f"Error: opción inválida. Elija entre {', '.join(opciones)}.")
-
+def validar_continente(mensaje):
+    while True:
+        origen = input(mensaje).strip().capitalize()
+        if origen in ["America", "Europa", "Asia", "Africa", "Oceania"]:
+                return origen
+        else:
+            print("Error: continente inválido. Elija entre América, Europa, Asia, África u Oceanía.")
