@@ -26,7 +26,7 @@ def ordenar_paises(paises):
         paises_ordenados = sorted(paises, key=lambda x: x["poblacion"], reverse=orden_inverso)
         criterio = "población"
     else:
-        paises_ordenados = sorted(paises, key=lambda x: x["superficie"], reverse=orden_inverso)
+        paises_ordenados = sorted(paises, key=lambda x: x["ssuperficie"], reverse=orden_inverso)
         criterio = "superficie"
 
     # El print en pantalla xD
@@ -41,8 +41,6 @@ def ordenar_paises(paises):
 
     print()
     return paises_ordenados
-
-
 
 
 if __name__ == "__main__":
