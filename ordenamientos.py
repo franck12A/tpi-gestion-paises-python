@@ -31,7 +31,7 @@ def ordenar_paises(paises):
 
     # El print en pantalla xD
     print()
-    print("ORDENAMIENTO DE PAISES".center(70,"."))
+    print("RESULTADO DE ORDENAMIENTO DE PAISES".center(70,"."))
     print(f" - Datos ordenados según su {criterio}")
     print(f" - Presentados en forma {orden_str}")
     print()
