@@ -4,6 +4,7 @@ from filtros import filtrar_paises
 from ordenamientos import ordenar_paises
 from estadisticas import mostrar_estadisticas
 from datos import cargar_csv
+from datos import guardar_csv
 
 def mostrar_menu():
     print("===== MENU =====")
@@ -13,7 +14,8 @@ def mostrar_menu():
     print("4. Filtrar países")
     print("5. Ordenar países")
     print("6. Estadísticas")
-    print("7. Salir")
+    print("7. Guardar")
+    print("8. Salir")
 paises = cargar_csv("paises.csv")
 
 
@@ -39,8 +41,10 @@ while True:
         mostrar_estadisticas(paises)
 
     elif opcion == "7":
-        print("Programa finalizado.")
+        guardar_csv("paises.csv", paises)
+        print("Datos guardados correctamente.")
+    elif opcion == "8":
+        print("Saliendo del programa...")
         break
-
     else:
         print("Opción inválida.")

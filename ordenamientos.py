@@ -1,3 +1,4 @@
+from validaciones import validar_opcion
 def ordenar_paises(paises):
     print()
     print("Ordenamiento de paises".center(70,"."))
@@ -5,12 +6,14 @@ def ordenar_paises(paises):
     print("  1) Ordenar por nombre")
     print("  2) Ordenar por población")
     print("  3) Ordenar por superficie")
-    segun_dato = int(input("\nSeleccione una opción: "))
+    segun_dato = validar_opcion("\nSeleccione una opción: ", ["1", "2", "3"])
+    segun_dato = int(segun_dato)
 
     print("\nTipos de ordenamiento: ")
     print("  1) Ascendente")
     print("  2) Descendente")
-    orden = int(input("\nSeleccione el orden: "))
+    orden = validar_opcion("\nSeleccione el orden: ", ["1", "2"])
+    orden = int(orden)
     orden_inverso = (orden == 2)
     orden_str = ("ascendente" if orden == 1 else "descendente")
     
@@ -26,7 +29,7 @@ def ordenar_paises(paises):
         paises_ordenados = sorted(paises, key=lambda x: x["poblacion"], reverse=orden_inverso)
         criterio = "población"
     else:
-        paises_ordenados = sorted(paises, key=lambda x: x["ssuperficie"], reverse=orden_inverso)
+        paises_ordenados = sorted(paises, key=lambda x: x["superficie"], reverse=orden_inverso)
         criterio = "superficie"
 
     # El print en pantalla xD
@@ -46,9 +49,9 @@ def ordenar_paises(paises):
 if __name__ == "__main__":
 
     #Esto solo representa una prueba para verificar el codigo de esta parte
-    ejemplo_paises = [{"nombre": "Argentina", "poblacion": 45376763, "superficie": 2780400,"continente": "América"},
+    ejemplo_paises = [{"nombre": "Argentina", "poblacion": 45376763, "superficie": 2780400,"continente": "America"},
                       {"nombre": "Japon", "poblacion": 125800000, "superficie": 377975,"continente": "Asia"},
-                      {"nombre": "Brasil", "poblacion": 213993437, "superficie": 8515767,"continente": "América"},
+                      {"nombre": "Brasil", "poblacion": 213993437, "superficie": 8515767,"continente": "America"},
                       {"nombre": "Alemania", "poblacion": 83149300, "superficie": 357022,"continente": "Europa"}
                       ]
     

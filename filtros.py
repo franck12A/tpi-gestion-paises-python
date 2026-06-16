@@ -1,11 +1,12 @@
-
+from validaciones import validar_opcion
 def filtrar_continente(paises):
     lista_continentes = ["America", "Asia", "Africa", "Antartida", "Europa", "Oceania"]
     paises_continente_elegido = []
     print("Seleccione el continente: ")
     for i, c in enumerate(lista_continentes):
         print(f" {i+1}) {c}")
-    opc= int(input("\nSeleccione una opción: "))
+    opc= validar_opcion("\nSeleccione una opción: ", [str(i) for i in range(1, len(lista_continentes)+1)])
+    opc = int(opc)
     continente_elegido = lista_continentes[opc-1]
 
     for pais in paises:
@@ -108,7 +109,7 @@ def filtrar_paises(paises):
     print(" 1) Continente")
     print(" 2) Población")
     print(" 3) Superficie")
-    opcion = input("\nSeleccione una opción: ")
+    opcion = validar_opcion("\nSeleccione una opción: ", ["1", "2", "3"])
     paises_filtro_aplicado = []
     criterio = ""
 

@@ -29,7 +29,7 @@ def validar_opcion(mensaje, opciones):
 def validar_continente(mensaje):
     while True:
         origen = input(mensaje).strip().capitalize()
-        if origen in ["America", "Europa", "Asia", "Africa", "Oceania"]:
+        if origen in ["America", "Europa", "Asia", "Africa", "Oceania", "Antartida"]:
                 return origen
         else:
             print("Error: continente inválido. Elija entre América, Europa, Asia, África u Oceanía.")
