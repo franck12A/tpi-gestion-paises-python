@@ -1,13 +1,15 @@
 def mostrar_estadisticas(paises):
     if not paises:
-            print("No hay paises cargados.")
+            print("No hay países cargados para mostrar estadísticas.")
             return
-    print("1. Mayor y menor población")
+    print("\n===== MENÚ DE ESTADÍSTICAS =====")
+    print("1. País con mayor y menor población")
     print("2. Promedio de población")
-    print("3. Promedio superficie")
-    print("4. Cantidad por continente")
-    print("5. Mostrar todos los paises")
+    print("3. Promedio de superficie")
+    print("4. Cantidad de países por continente")
+    print("===============================\n")
     opcion = input("Seleccione una opción: ")
+    
     if opcion == "1":
         mayor = paises[0]
         menor = paises[0]
@@ -17,23 +19,30 @@ def mostrar_estadisticas(paises):
             if pais["poblacion"] < menor["poblacion"]:
                 menor = pais
 
-        print(f"País con mayor población: {mayor['nombre']} ({mayor['poblacion']})")
-        print(f"País con menor población: {menor['nombre']} ({menor['poblacion']})")
+        print("\n===== MAYOR Y MENOR POBLACIÓN =====")
+        print(f"País con mayor población: {mayor['nombre']}")
+        print(f"Habitantes: {mayor['poblacion']}")
+
+        print()
+
+        print(f"País con menor población: {menor['nombre']}")
+        print(f"Habitantes: {menor['poblacion']}")
     elif opcion == "2":
         total_poblacion = 0
         for pais in paises:
             total_poblacion += pais["poblacion"]
 
         promedio = total_poblacion / len(paises)
-        print(f"Promedio de población: {promedio}")
-
+        print("\n===== PROMEDIO DE POBLACIÓN =====")
+        print(f"Población promedio: {promedio}")
     elif opcion == "3":
         total_superficie = 0
         for pais in paises:
             total_superficie += pais["superficie"]
-
+        
         promedio = total_superficie / len(paises)
-        print(f"Promedio de superficie: {promedio}")
+        print("\n===== PROMEDIO DE SUPERFICIE =====")
+        print(f"Superficie promedio: {promedio}")
     elif opcion == "4":
         continentes = {}
         for pais in paises:
@@ -41,11 +50,9 @@ def mostrar_estadisticas(paises):
                 continentes[pais["continente"]] = 1
             else:
                 continentes[pais["continente"]] += 1
+        print("\n===== CANTIDAD DE PAÍSES POR CONTINENTE =====")
         for continente in continentes:
             print(f"{continente}: {continentes[continente]} países")
-    elif opcion == "5":
-        for pais in paises:
-            for continente, cantidad in continentes.items():
-                print(f"{continente}: {cantidad} países")
+
     else:
         print("Opción inválida.")

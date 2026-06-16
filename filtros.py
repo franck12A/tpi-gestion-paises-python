@@ -1,5 +1,6 @@
+
 def filtrar_continente(paises):
-    lista_continentes = ["América", "Asia", "África", "Antártida", "Europa", "Oceanía"]
+    lista_continentes = ["America", "Asia", "Africa", "Antartida", "Europa", "Oceania"]
     paises_continente_elegido = []
     print("Seleccione el continente: ")
     for i, c in enumerate(lista_continentes):

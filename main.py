@@ -1,4 +1,4 @@
-#from datos import agregar_pais, actualizar_pais
+from datos import agregar_pais, actualizar_pais
 from busquedas import buscar_pais
 from filtros import filtrar_paises
 from ordenamientos import ordenar_paises
