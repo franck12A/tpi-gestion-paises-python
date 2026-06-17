@@ -1,5 +1,7 @@
+from validaciones import validar_texto
+
 def buscar_pais(paises):
-    nombre_buscado = input("Ingrese el nombre del país a buscar: ").strip().lower()
+    nombre_buscado = validar_texto("Ingrese el nombre del país a buscar: ").lower()
 
     encontrado = False
     for pais in paises:
