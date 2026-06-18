@@ -178,15 +178,15 @@ Japon,125800000,377975,Asia
 
 ## Documentación
 
-La documentación técnica y académica del proyecto se encuentra incluida en formato PDF dentro del repositorio.
+La documentación técnica y académica del proyecto se encuentra incluida en formato PDF dentro de este repositorio.
 
-**PDF:** [Agregar enlace]
-
+**Archivo:** TPI_Gestion_Paises.pdf
 ---
 
 ## Video Demostración
 
-**Video:** [Agregar enlace]
+**Enlace al video:**
+https://www.youtube.com/watch?v=PK1TO6wFvt0
 
 ---
 
